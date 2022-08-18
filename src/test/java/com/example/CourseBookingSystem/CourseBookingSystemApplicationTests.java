@@ -68,4 +68,17 @@ class CourseBookingSystemApplicationTests {
 		assertEquals("Intro to Ruby", foundBookings.get(0).getCourse().getName());
 	}
 
+	@Test
+	public void canFindCustomerByTownAndCourseName() {
+		List<Customer> foundCustomer = customerRepository.findByTownAndBookingsCourseName("Manchester", "Intro to Ruby");
+		assertEquals(2, foundCustomer.size());
+	}
+
+	@Test
+	public void canFindCustomerByTownAndCourseNameAndIfOverAge() {
+		List<Customer> foundCustomer = customerRepository.findByTownAndBookingsCourseNameAndAgeGreaterThan("Manchester", "Intro to Ruby", 30);
+		assertEquals(1, foundCustomer.size());
+		assertEquals("Michael", foundCustomer.get(0).getName());
+	}
 }
+
