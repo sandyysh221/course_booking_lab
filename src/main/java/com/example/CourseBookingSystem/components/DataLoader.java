@@ -29,16 +29,16 @@ public class DataLoader implements ApplicationRunner {
         Course course1 = new Course("Intro to Python", "Edinburgh", 5);
         courseRepository.save(course1);
 
-        Course course2 = new Course("Intro to JavaScript", "Glasgow", 5);
+        Course course2 = new Course("Intro to JavaScript", "Glasgow", 4);
         courseRepository.save(course2);
 
-        Course course3 = new Course("Intro to Java", "Remote", 5);
+        Course course3 = new Course("Intro to Java", "Remote", 3);
         courseRepository.save(course3);
 
-        Course course4 = new Course("Intro to React", "Newcastle", 5);
+        Course course4 = new Course("Intro to React", "Newcastle", 2);
         courseRepository.save(course4);
 
-        Course course5 = new Course("Intro to Ruby", "Manchester", 5);
+        Course course5 = new Course("Intro to Ruby", "Manchester", 1);
         courseRepository.save(course5);
 
         Customer customer1 = new Customer("Sandy", "Edinburgh", 30);
@@ -73,5 +73,8 @@ public class DataLoader implements ApplicationRunner {
 
         Booking booking6 = new Booking("19-06-22", course2, customer1);
         bookingRepository.save(booking6);
+
+        Booking booking7 = new Booking("12-12-22", course3, customer4);
+        bookingRepository.save(booking7);
     }
 }
